@@ -1,0 +1,49 @@
+.task_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--gray-500);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.3rem;
+
+  
+}
+
+.task_box input[type=checkbox] {
+  display: none;
+}
+
+.not_checked:before {
+  display: inline-block;
+  content: '';
+  padding: 0.4rem;
+  border: 3px solid var(--blue);
+  border-radius: 50%;
+  
+}
+
+.checked:before {
+  content: '';
+  display: inline-block;
+  background: url('../../assets/check.svg') no-repeat center center;
+  border: none;
+  padding: 0.6rem;
+}
+
+.marked {
+  text-decoration: line-through;
+  color: var(--gray-300);
+  padding: 0 1rem;
+}
+
+.not_marked {
+    padding: 0 1rem;
+    color: var(--gray-100);
+}
+
+.delete_button {
+  background:none;
+  border: none;
+  color: var(--gray-300);
+}

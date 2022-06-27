@@ -1,0 +1,92 @@
+.input_wrapper {
+  display: flex;
+  max-width: 48rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  margin-top: -25px;
+  margin-bottom: 4rem;
+}
+
+.input_todo {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: var(--gray-500);
+  color: var(--gray-300);
+  padding: 1rem;
+  margin-right: 8px;
+}
+
+.add_button {
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0.5rem;
+  background: none;
+  background: var(--blue-dark);
+  border: none;
+  border-radius: 8px;
+  color: var(--gray-100);
+}
+
+
+.clipeboard_wrapper {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--gray-300);
+  border-radius: 20px;
+
+  .clipeboard_items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .first_text {
+    color: var(--gray-300);
+    font-weight: bold;
+  }
+
+  .second_text {
+    color: var(--gray-300);
+    
+  }
+}
+
+.main_wrapper {
+  max-width: 46rem;
+  margin: 0 auto;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.todo_created {
+  color: var(--blue-dark);
+  }
+
+
+.todo_concluded {
+  color: var(--purple-dark);
+  
+}
+
+span {
+  background: var(--gray-400);
+  border-radius: 10px;
+  padding: 0.2rem 0.5rem;
+  color: var(--gray-100);
+}
