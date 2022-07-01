@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { v4 as uuidv4 } from 'uuid'
 import { PlusCircle } from 'phosphor-react'
@@ -21,12 +21,20 @@ function App() {
   const [todo, setTodo] = useState('')
   const [todoList, setTodoList] = useState<ListProps[]>([])
 
+  useEffect(() => {
+    if (localStorage.getItem('Todos')) {
+      const storedTodos = JSON.parse(localStorage.getItem('Todos') as string)
+      setTodoList(storedTodos)
+    }
+  }, [])
+
   const addTodo = () => {
     if (!todo) return
     const todoId = uuidv4()
 
     const newTodo = { id: todoId, title: todo, isComplete: false }
     setTodoList([...todoList, newTodo])
+    localStorage.setItem('Todos', JSON.stringify([...todoList, newTodo]))
     setTodo('')
   }
 
@@ -47,12 +55,14 @@ function App() {
         : todo
     )
     setTodoList(checkedTodos)
+    localStorage.setItem('Todos', JSON.stringify(checkedTodos))
   }
 
   const handleDelete = (id: string) => {
     const filteredTasks = todoList.filter((task) => task.id !== id)
 
     setTodoList(filteredTasks)
+    localStorage.setItem('Todos', JSON.stringify(filteredTasks))
   }
 
   return (
